@@ -1,6 +1,6 @@
 # VRC-MedciaCtrl
 
-This mod allows you to use media key shortcuts in VRC action menu, for example sopotify, VLC, Youtube etc... by emulating keypresses.
+This mod allows you to use media key shortcuts in VRC action menu, for example spotify, VLC, Youtube etc... by emulating keypresses.
 
 Requirements:<br>
 [MelonLoader](https://github.com/LavaGang/MelonLoader)<br>
