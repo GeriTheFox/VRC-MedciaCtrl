@@ -4,7 +4,7 @@ using MelonLoader;
 using ActionMenuApi.Api;
 using System.Runtime.InteropServices;
 
-[assembly: MelonInfo(typeof(meow.MyMod), "Media controll", "1.0", "Geri")]
+[assembly: MelonInfo(typeof(meow.MyMod), "Media controll", "1.1", "Geri")]
 [assembly: MelonColor(ConsoleColor.Yellow)]
 [assembly: MelonGame("VRChat", "VRChat")]
 
@@ -32,7 +32,7 @@ namespace meow
             if (MelonHandler.Mods.Any(mods => mods.Info.Name == "ActionMenuApi"))
             {
                 init_ama();
-                Logger.Msg("Loaded");
+                Logger.Msg("Initialized");
             }
             else
             {
@@ -46,18 +46,17 @@ namespace meow
         }
         public static void menu()
         {
-            CustomSubMenu.AddButton("PrevTrack", () =>
+            CustomSubMenu.AddButton("NextTrack", () =>
             {
-                keybd_event(VK_MEDIA_PREV_TRACK, 0, KEYEVENTF_EXTENTEDKEY, IntPtr.Zero);
+                keybd_event(VK_MEDIA_NEXT_TRACK, 0, KEYEVENTF_EXTENTEDKEY, IntPtr.Zero);
             });
             CustomSubMenu.AddButton("Play/Pause", () =>
             {
                 keybd_event(VK_MEDIA_PLAY_PAUSE, 0, KEYEVENTF_EXTENTEDKEY, IntPtr.Zero);
             });
-            CustomSubMenu.AddButton("NextTrack", () =>
+                        CustomSubMenu.AddButton("PrevTrack", () =>
             {
-                keybd_event(VK_MEDIA_NEXT_TRACK, 0, KEYEVENTF_EXTENTEDKEY, IntPtr.Zero);
-
+                keybd_event(VK_MEDIA_PREV_TRACK, 0, KEYEVENTF_EXTENTEDKEY, IntPtr.Zero);
             });
         }
     }
